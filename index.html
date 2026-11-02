@@ -1,33 +1,303 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-bs-theme="light">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Como a Geração Z constrói experiência e lida com a ansiedade do primeiro emprego quando a IA automatiza o trabalho júnior.">
-  <title>Porta de Entrada Fechada? | IA e o primeiro emprego da Geração Z</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Como a Geração Z constrói experiência e lida com a ansiedade do primeiro emprego quando a IA automatiza o trabalho júnior.">
+    <title>Porta de Entrada Fechada? | IA e o primeiro emprego da Geração Z</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-  <header>
-    <nav class="navbar navbar-expand-lg site-nav" aria-label="Navegação principal">
-      <div class="container">
-        <a class="navbar-brand brand" href="#inicio">Porta de entrada</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
-                aria-controls="menu" aria-expanded="false" aria-label="Abrir menu de navegação">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menu">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item"><a class="nav-link" href="#cenario">Cenário</a></li>
-            <li class="nav-item"><a class="nav-link" href="#dados">Dados</a></li>
-            <li class="nav-item"><a class="nav-link" href="#simulador">Simulador</a></li>
-            <li class="nav-item"><a class="nav-link" href="#debate">Debate</a></li>
-            <li class="nav-item"><a class="nav-link" href="#fontes">Fontes</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg site-nav" aria-label="Navegação principal">
+            <div class="container">
+                <a class="navbar-brand brand" href="#inicio">Porta de entrada</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Abrir menu de navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="#Index">Cenário</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#dados">Dados</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#Simulador">Simulador</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#Debate">Debate</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#Fontes">Fontes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <section id="cenario" class="p-4 p-md-5 border rounded-4">
+            <header class="mb-5">
+                <h2 class="display-6">Quem contrata o júnior se a IA já faz esse trabalho de um júnior?</h2>
+                <p class="lead text-body-secondary col-lg-8 px-0">
+                    Para conseguir o primeiro emprego é preciso experiência, mas as tarefas
+                    que davam essa experiência estão sendo automatizadas.
+                </p>
+            </header>
+            <div class="row g-4 align-items-start">
+                <article class="col-md-7">
+                    <h3 class="h5">O que a IA já faz no trabalho júnior?</h3>
+                    <div class="linha" style="width:100%"></div>
+                    <div class="linha" style="width:94%"></div>
+                    <div class="linha" style="width:88%"></div>
+                    <div class="linha" style="width:70%"></div>
+                    <p class="text-body-secondary mt-3"></p>
+                    <p>A inteligência artificial está transformando o mercado de tecnologia, assumindo tarefas que antes
+                        eram realizadas por profissionais iniciantes. Mas, se essas atividades deixam de ser
+                        oportunidades de aprendizado, como os jovens poderão desenvolver as habilidades necessárias para
+                        conquistar seu primeiro emprego?
+                        Afinal, como adquirir experiência se a porta de entrada para o mercado está cada vez mais
+                        estreita?</p>
+                </article>
+                <figure class="col-md-5 mb-0">
+                    <div class="ratio ratio-16x9 bg-body-tertiary rounded-4 overflow-hidden">
+                        <img src="image/ia image.jpg.png" class="object-fit-cover">
+                        <div class="d-flex align-items-center justify-content-center text-body-secondary">
+                        </div>
+                    </div>
+            </div>
+            <section class="section-card">
+                <div class="row g-3 mt-2">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card card-timeline h-100">
+                            <div class="card-body">
+                                <span class="numero">1</span>
+                                <h5 class="card-title mt-2">
+                                    Antes
+                                </h5>
+                                <p class="card-text">
+                                    Júnior aprendia fazendo tarefas simples.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card card-timeline h-100">
+                            <div class="card-body">
+                                <span class="numero">2</span>
+                                <h5 class="card-title mt-2">
+                                    Chegada das LLMs
+                                </h5>
+                                <p class="card-text">
+                                    Assistentes de código viram rotina.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card card-timeline h-100">
+                            <div class="card-body">
+                                <span class="numero">3</span>
+                                <h5 class="card-title mt-2">
+                                    Automação
+                                </h5>
+                                <p class="card-text">
+                                    Tarefas de entrada somem das vagas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card card-timeline h-100">
+                            <div class="card-body">
+                                <span class="numero">4</span>
+                                <h5 class="card-title mt-2">
+                                    Hoje
+                                </h5>
+                                <p class="card-text">
+                                    Mais exigência de quem está começando.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section id="dados" class="section-card">
+            <h2>O impacto da IA nas vagas júnior</h2>
+            <p>
+                Dados sobre as mudanças no mercado de trabalho
+                e nas oportunidades para profissionais iniciantes.
+            </p>
+            <div class="row g-4 mt-3">
+                <div class="col-12 col-lg-6">
+
+                    <div class="card card-timeline h-100">
+
+                        <div class="card-body">
+
+                            <h5>Redução nas vagas de tecnologia</h5>
+
+                            <canvas id="graficoVagas"></canvas>
+
+                            <small class="text-secondary">
+                                Fonte: Indeed Hiring Lab, 2025.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="card card-timeline h-100">
+                        <div class="card-body">
+                            <h5>Exigência de experiência</h5>
+                            <canvas id="graficoExperiencia"></canvas>
+                            <small class="text-secondary">
+                                Fonte: Indeed Hiring Lab, 2025.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card card-timeline">
+                        <div class="card-body">
+                            <h5>Impacto da IA no emprego jovem</h5>
+                            <canvas id="graficoJovens"></canvas>
+                            <small class="text-secondary">
+                                Fonte: Stanford Digital Economy Lab, 2025 e 2026.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script> 
+        Chart.defaults.font.family = 'Inter';
+        Chart.defaults.color = '#1E293B';
+        new Chart(document.getElementById('graficoVagas'), {
+            type: 'bar',
+            data: {
+                labels: ['Júnior / padrão', 'Sênior / gerência'],
+                datasets: [{
+                    label: 'Redução nas vagas (%)',
+                    data: [34, 19],
+                    backgroundColor: [
+                        '#2563EB',
+                        '#93C5FD'
+                    ],
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+
+                        ticks: {
+                            callback: function (value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        new Chart(document.getElementById('graficoExperiencia'), {
+
+            type: 'line',
+            data: {
+                labels: ['2022', '2025'],
+
+                datasets: [{
+
+                    label: 'Vagas que exigem 5+ anos (%)',
+
+                    data: [37, 42],
+
+                    borderColor: '#2563EB',
+
+                    backgroundColor: '#93C5FD',
+
+                    pointBackgroundColor: '#2563EB',
+
+                    pointRadius: 6,
+
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+
+                        max: 50,
+
+                        ticks: {
+                            callback: function (value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        new Chart(document.getElementById('graficoJovens'), {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Estudo de 2025',
+                    'Atualização de 2026'
+                ],
+                datasets: [{
+                    label: 'Redução relativa no emprego (%)',
+                    data: [13, 19],
+                    backgroundColor: [
+                        '#93C5FD',
+                        '#2563EB'
+                    ],
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+
+                        ticks: {
+                            callback: function (value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
