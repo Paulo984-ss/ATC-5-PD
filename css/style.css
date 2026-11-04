@@ -1,78 +1,180 @@
+
+:root {
+    --cor-fundo: #E5E7EB;
+    --cor-texto: #1E293B;
+    --cor-primaria: #2563EB;
+    --cor-primaria-hover: #1D4ED8;
+    --cor-navbar: #111827;
+    --cor-card: #FFFFFF;
+    --cor-card-escuro: #1B1B1B;
+    --cor-borda: #D1D5DB;
+    --cor-texto-claro: #E5E7EB;
+    --fonte-principal: 'Inter', sans-serif;
+    --fonte-titulo: 'Space Grotesk', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
 body {
-    background-color: #E5E7EB;
-    color: #1E293B;
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+}
+
+.site-nav {
+    background-color: var(--cor-navbar);
+    padding: 15px 0;
+}
+
+.brand {
+    color: #FFFFFF;
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+}
+
+.brand:hover,
+.site-nav .nav-link:hover {
+    color: #60A5FA;
+}
+
+.site-nav .nav-link {
+    color: #D1D5DB;
+    transition: 0.3s;
 }
 
 .section-card {
-    background-color: #FFFFFF;
-    border: 1px solid #D1D5DB;
+    background-color: var(--cor-card);
+    border: 1px solid var(--cor-borda);
     border-radius: 15px;
+    margin-bottom: 30px;
 }
 
-.btn-dark {
-    background-color: #2563EB;
-    color: white;
+.linha {
+    height: 8px;
+    background-color: var(--cor-primaria);
+    border-radius: 10px;
+    margin: 12px 0;
 }
 
-.tag-html {
-    background-color: #DBEAFE;
-    color: #1D4ED8;
+.card-timeline {
+    background-color: #F8FAFC;
+    color: var(--cor-texto);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+
+.card-timeline:hover {
+    transform: translateY(-5px);
 }
 
 .numero {
-    color: #1421da;
+    color: var(--cor-primaria);
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
-/* Cards dos números */
 .card-dado,
 .card-grafico {
-    background-color: #1b1b1b;
-    color: #e5e7eb;
+    background-color: var(--cor-card-escuro);
+    color: var(--cor-texto-claro);
     border: 1px solid #343434;
     border-radius: 12px;
 }
 
-.card-dado .card-body {
-    padding: 15px;
+.card-dado .card-body,
+.card-grafico .card-body {
+    padding: 20px;
 }
 
 .numero-dado {
-    color: #60a5fa;
-    font-size: 2rem;
+    color: #60A5FA;
+    font-size: 2.3rem;
     font-weight: 700;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
 }
 
 .card-dado p {
-    color: #c4c4c4;
-    margin-bottom: 0;
+    color: #C4C4C4;
     font-size: 0.9rem;
+    margin-bottom: 0;
 }
 
-/* Cards dos gráficos */
-.card-grafico .card-body {
-    padding: 15px;
-}
-
-.card-grafico h5 {
-    font-size: 1rem;
+.card-grafico h3 {
+    color: #FFFFFF;
+    font-family: var(--fonte-titulo);
     font-weight: 600;
-    margin-bottom: 15px;
 }
 
-.card-grafico canvas {
+.grafico-container {
+    position: relative;
     width: 100%;
-    height: 190px;
+    height: 280px;
 }
 
 .fonte-grafico {
     display: block;
     color: #929292;
     font-size: 0.75rem;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 .nota-dados {
-    color: #a3a3a3;
-    font-size: 0.8rem;
-} 
+    color: #6B7280;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.btn-dark {
+    background-color: var(--cor-primaria);
+    color: #FFFFFF;
+    border: none;
+}
+
+.btn-dark:hover {
+    background-color: var(--cor-primaria-hover);
+    color: #FFFFFF;
+}
+
+.tag-html {
+    background-color: #DBEAFE;
+    color: #1D4ED8;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .section-card {
+        padding: 20px !important;
+    }
+
+    .display-6 {
+        font-size: 1.7rem;
+    }
+
+    .grafico-container {
+        height: 250px;
+    }
+
+    .numero-dado {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .grafico-container {
+        height: 230px;
+    }
+
+    .card-grafico .card-body {
+        padding: 15px;
+    }
+}
