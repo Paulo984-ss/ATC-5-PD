@@ -264,3 +264,138 @@ new Chart(elementoExperiencia, {
         }
     }
 });
+
+### O que foi feito nesta atualização
+
+- **Simulador de empregabilidade júnior** (`Simulador.html` + `js/simulador.js`):
+  formulário com dois eixos, preparo para o mercado (horas de estudo, projetos
+  no GitHub, uso de IA, experiência prática) e dimensão socioemocional
+  (comparação com a IA e dias de descanso). O resultado mostra duas pontuações
+  de 0 a 100 com faixa (baixa, média ou alta) e recomendações personalizadas.
+- **Página de Dados** (`Dados.html`): cartões com os principais números e três
+  gráficos feitos com Chart.js.
+- **Modo claro e escuro**: botão no menu de todas as páginas (`js/tema.js`).
+  A escolha fica salva no navegador.
+- **Navegação padronizada**: o mesmo menu em todas as páginas, com links entre
+  Cenário, Dados, Simulador, Debate e Fontes.
+- **Página inicial** (`index.html`): ficou só com a seção de abertura, e os
+  demais conteúdos foram para páginas próprias.
+
+### Correções
+
+- Links quebrados do menu na página do simulador.
+- Id do título do simulador que não correspondia ao `aria-labelledby`
+  (acessibilidade).
+- Seções que apareciam como "será desenvolvida posteriormente".
+
+### Tecnologias
+
+HTML5, CSS3, JavaScript, Bootstrap 5.3 e Chart.js.
+
+### Estrutura
+
+index.html, Dados.html, Simulador.html, Debate.html, Fontes.html,
+css/style.css, js/script.js, js/simulador.js, js/tema.js, image/
+
+
+Correções:
+<li class="nav-item"><a class="nav-link" href="index.html#inicio">Cenário</a></li>
+<li class="nav-item"><a class="nav-link" href="Dados.html">Dados</a></li>
+<li class="nav-item"><a class="nav-link active" href="Simulador.html">Simulador</a></li>
+<li class="nav-item"><a class="nav-link" href="Debate.html">Debate</a></li>
+<li class="nav-item"><a class="nav-link" href="Fontes.html">Fontes</a></li>
+
+
+Id do título que não batia com o aria-labelledby (acessibilidade)
+<section id="Simulador" ... aria-labelledby="titulo-simulador">
+    <h1 id="titulo-simulador" class="display-6 fw-bold">
+
+Depois, essas seções saíram da página inicial e cada uma virou uma página própria. Ficou só um botão para a página de Dados no fim da primeira seção:
+
+html
+<div class="mt-4">
+    <a href="Dados.html" class="btn btn-primary px-4">Ver os dados</a>
+</div>
+
+4. Modo claro e escuro
+
+Botão no menu de todas as páginas:
+
+html
+<button id="btnTema" type="button" class="btn btn-outline-light btn-sm ms-lg-3 mt-2 mt-lg-0">🌙 Modo escuro</button>
+
+No <head>, depois do CSS (e data-bs-theme="light" no <html>):
+
+html
+<link href="css/style.css" rel="stylesheet">
+<script src="js/tema.js"></script>
+
+js/tema.js:
+
+javascript
+// Aplica o tema salvo (ou claro, por padrão) antes de desenhar a página
+(function () {
+    var salvo = null;
+    try { salvo = localStorage.getItem('tema'); } catch (e) { }
+    var tema = salvo === 'dark' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-bs-theme', tema);
+})();
+
+document.addEventListener('DOMContentLoaded', function () {
+    var botao = document.getElementById('btnTema');
+    if (!botao) return;
+
+    function atualizar() {
+        var escuro = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+        botao.textContent = escuro ? '☀️ Modo claro' : '🌙 Modo escuro';
+        botao.setAttribute('aria-pressed', escuro ? 'true' : 'false');
+    }
+
+    botao.addEventListener('click', function () {
+        var escuro = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+        var novo = escuro ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-bs-theme', novo);
+        try { localStorage.setItem('tema', novo); } catch (e) { }
+        atualizar();
+    });
+
+    atualizar();
+});
+
+Acrescentado no fim de css/style.css:
+#btnTema {
+    white-space: nowrap;
+}
+
+[data-bs-theme="dark"] {
+    --cor-fundo: #0F172A;
+    --cor-texto: #E2E8F0;
+    --cor-card: #1E293B;
+    --cor-borda: #334155;
+}
+
+[data-bs-theme="dark"] .card-timeline {
+    background-color: #273449;
+    color: var(--cor-texto);
+    border-color: #3B4A63;
+}
+
+[data-bs-theme="dark"] .numero {
+    color: #60A5FA;
+}
+
+[data-bs-theme="dark"] .nota-dados {
+    color: #94A3B8;
+}
+
+[data-bs-theme="dark"] .card-dado,
+[data-bs-theme="dark"] .card-grafico {
+    background-color: #111827;
+    border-color: #334155;
+}
+
+[data-bs-theme="dark"] a:not(.btn):not(.nav-link):not(.navbar-brand) {
+    color: #60A5FA;
+}
+
+
