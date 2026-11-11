@@ -4,247 +4,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta name="description" content="Como a inteligência artificial transforma o primeiro emprego da Geração Z.">
-
     <title>Porta de Entrada Fechada? | IA e o primeiro emprego</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link href="css/style.css" rel="stylesheet">
     <script src="js/tema.js"></script>
-
 </head>
 
 <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
     <header>
-
-        <nav class="navbar navbar-expand-lg site-nav sticky-top" aria-label="Navegação principal">
+        <nav class="navbar navbar-expand-lg site-nav sticky-top" data-bs-theme="dark" aria-label="Navegação principal">
             <div class="container">
                 <a class="navbar-brand brand" href="index.html">Porta de Entrada</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
-                    aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menu" aria-controls="menu" aria-expanded="false"
+                    aria-label="Abrir menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html#inicio">Cenário</a>
+                            <a class="nav-link active" href="index.html#inicio" aria-current="page">Cenário</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="Dados.html">Dados</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="Simulador.html">Simulador</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="Debate.html">Debate</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="Fontes.html">Fontes</a>
                         </li>
                     </ul>
-                    <button id="btnTema" type="button" class="btn btn-outline-light btn-sm ms-lg-3 mt-2 mt-lg-0">🌙 Modo
-                        escuro</button>
+                    <button id="btnTema" type="button" class="btn btn-outline-light btn-sm ms-lg-3 mt-2 mt-lg-0" aria-pressed="false">🌙 Modo escuro</button>
                 </div>
             </div>
         </nav>
-
     </header>
 
-
-    <main class="container py-4">
-
-
-        <section id="inicio" class="section-card p-4 p-md-5 mb-5">
-
+    <main id="conteudo" class="container py-4">
+        <section id="inicio" class="section-card p-4 p-md-5 mb-5" aria-labelledby="titulo-inicio">
             <header class="mb-4">
-
-                <h1 class="display-6">
-                    Quem contrata o júnior se a IA já faz esse trabalho?
-                </h1>
-
-                <p class="lead text-secondary">
+                <h1 id="titulo-inicio" class="display-6">Quem contrata o júnior se a IA já faz esse trabalho?</h1>
+                <p class="lead text-body-secondary">
                     Para conseguir o primeiro emprego é preciso experiência,
-                    mas as tarefas que davam essa experiência estão sendo
-                    automatizadas.
+                    mas as tarefas que davam essa experiência estão sendo automatizadas.
                 </p>
-
             </header>
 
-
             <div class="row g-4 align-items-center">
-
                 <article class="col-12 col-md-7">
+                    <h2 class="h4">O que a IA já faz no trabalho júnior?</h2>
 
-                    <h2 class="h4">
-                        O que a IA já faz no trabalho júnior?
-                    </h2>
-
-                    <div class="linha" style="width: 100%;"></div>
-                    <div class="linha" style="width: 94%;"></div>
-                    <div class="linha" style="width: 88%;"></div>
-                    <div class="linha" style="width: 70%;"></div>
-
-                    <p class="mt-4">
-
-                        A inteligência artificial está transformando
-                        o mercado de tecnologia, assumindo tarefas
-                        que antes eram realizadas por profissionais
-                        iniciantes.
-
-                    </p>
+                    <div class="linhas" aria-hidden="true">
+                        <div class="linha" style="--larg: 100%; --i: 0"></div>
+                        <div class="linha" style="--larg: 94%; --i: 1"></div>
+                        <div class="linha" style="--larg: 88%; --i: 2"></div>
+                        <div class="linha" style="--larg: 70%; --i: 3"></div>
+                    </div>
 
                     <p>
-
-                        Mas, se essas atividades deixam de ser
-                        oportunidades de aprendizado, como os jovens
-                        poderão desenvolver as habilidades necessárias
-                        para conquistar seu primeiro emprego?
-
+                        A inteligência artificial está transformando o mercado de tecnologia,
+                        assumindo tarefas que antes eram realizadas por profissionais iniciantes.
                     </p>
-
                     <p>
-
-                        Afinal, como adquirir experiência se a porta
-                        de entrada para o mercado está cada vez mais estreita?
-
+                        Mas, se essas atividades deixam de ser oportunidades de aprendizado,
+                        como os jovens vão desenvolver as habilidades para conquistar o primeiro emprego?
                     </p>
-
+                    <p>
+                        Afinal, como adquirir experiência se a porta de entrada para o mercado
+                        está cada vez mais estreita?
+                    </p>
                 </article>
 
-
                 <figure class="col-12 col-md-5 mb-0">
-
                     <div class="ratio ratio-16x9 rounded-4 overflow-hidden">
-
-                        <img src="image/ia image.jpg.png"
-                            alt="Inteligência artificial transformando o mercado de trabalho" class="object-fit-cover">
-
+                        <img src="image/ia-image.png"
+                            alt="Ilustração de um jovem desanimado diante do notebook, ao lado de um robô de IA e de um cartaz de vaga júnior carimbado como substituída"
+                            class="object-fit-cover" width="1536" height="1024">
                     </div>
-
+                    <figcaption class="fonte-grafico">Ilustração do projeto.</figcaption>
                 </figure>
-
             </div>
 
-
-            <div class="row g-3 mt-4">
-
-                <div class="col-12 col-md-6 col-lg-3">
-
+            <h2 class="h4 mt-5">Como a porta foi se estreitando</h2>
+            <ol class="list-unstyled row g-3 mt-1">
+                <li class="col-12 col-md-6 col-lg-3">
                     <div class="card card-timeline h-100">
-
                         <div class="card-body">
-
-                            <span class="numero">1</span>
-
+                            <span class="numero" aria-hidden="true">1</span>
                             <h3 class="h5 mt-2">Antes</h3>
-
-                            <p>
-                                Júnior aprendia fazendo tarefas simples.
-                            </p>
-
+                            <p>Júnior aprendia fazendo tarefas simples.</p>
                         </div>
-
                     </div>
-
-                </div>
-
-
-                <div class="col-12 col-md-6 col-lg-3">
-
+                </li>
+                <li class="col-12 col-md-6 col-lg-3">
                     <div class="card card-timeline h-100">
-
                         <div class="card-body">
-
-                            <span class="numero">2</span>
-
+                            <span class="numero" aria-hidden="true">2</span>
                             <h3 class="h5 mt-2">Chegada das LLMs</h3>
-
-                            <p>
-                                Assistentes de código viram rotina.
-                            </p>
-
+                            <p>Assistentes de código viram rotina.</p>
                         </div>
-
                     </div>
-
-                </div>
-
-
-                <div class="col-12 col-md-6 col-lg-3">
-
+                </li>
+                <li class="col-12 col-md-6 col-lg-3">
                     <div class="card card-timeline h-100">
-
                         <div class="card-body">
-
-                            <span class="numero">3</span>
-
+                            <span class="numero" aria-hidden="true">3</span>
                             <h3 class="h5 mt-2">Automação</h3>
-
-                            <p>
-                                Tarefas de entrada são automatizadas.
-                            </p>
-
+                            <p>Tarefas de entrada são automatizadas.</p>
                         </div>
-
                     </div>
-
-                </div>
-
-
-                <div class="col-12 col-md-6 col-lg-3">
-
+                </li>
+                <li class="col-12 col-md-6 col-lg-3">
                     <div class="card card-timeline h-100">
-
                         <div class="card-body">
-
-                            <span class="numero">4</span>
-
+                            <span class="numero" aria-hidden="true">4</span>
                             <h3 class="h5 mt-2">Hoje</h3>
-
-                            <p>
-                                Mais exigência de quem está começando.
-                            </p>
-
+                            <p>Mais exigência de quem está começando.</p>
                         </div>
-
                     </div>
-
-                </div>
-
-            </div>
-
-            <div class="mt-4">
-                <a href="Dados.html" class="btn btn-primary px-4">Ver os dados</a>
-            </div>
-
+                </li>
+            </ol>
         </section>
 
-
+        <section id="geracao" class="section-card p-4 p-md-5 mb-5" aria-labelledby="titulo-geracao">
+            <h2 id="titulo-geracao" class="h3">E o lado emocional de quem está começando?</h2>
+            <p class="text-body-secondary">
+                A mudança no mercado não é só uma questão de vagas. A pesquisa global da Deloitte (2026)
+                ouviu jovens da Geração Z e mostra um quadro misto.
+            </p>
+            <div class="row g-3 mt-2">
+                <div class="col-12 col-md-6">
+                    <article class="card card-timeline h-100">
+                        <div class="card-body">
+                            <span class="badge text-bg-warning badge-eixo">Faceta crítica</span>
+                            <p class="mt-3 mb-0">
+                                48% da Geração Z relata burnout e 34% se sente ansiosa ou estressada
+                                quase o tempo todo.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6">
+                    <article class="card card-timeline h-100">
+                        <div class="card-body">
+                            <span class="badge text-bg-primary badge-eixo">Faceta positiva</span>
+                            <p class="mt-3 mb-0">
+                                74% já usa IA no trabalho diário e 63% avalia a própria saúde mental
+                                como boa ou ótima.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="mt-4 d-flex flex-wrap gap-2">
+                <a href="Dados.html" class="btn btn-primary px-4">Ver os dados</a>
+                <a href="Simulador.html" class="btn btn-outline-primary px-4">Testar o simulador</a>
+            </div>
+        </section>
     </main>
 
-
+    <footer class="site-footer">
+        <div class="container rodape-grid">
+            <section aria-label="Sobre o projeto">
+                <p class="rodape-titulo">Porta de Entrada Fechada?</p>
+                <p>Projeto acadêmico de Front-end e Copilotagem com IA (UNICID, Prof. Diego Marques de Carvalho) sobre IA, primeiro emprego e Geração Z.</p>
+            </section>
+            <nav aria-label="Páginas do site">
+                <p class="rodape-titulo">Páginas</p>
+                <ul>
+                    <li><a href="index.html#inicio">Cenário</a></li>
+                    <li><a href="Dados.html">Dados</a></li>
+                    <li><a href="Simulador.html">Simulador</a></li>
+                    <li><a href="Debate.html">Debate</a></li>
+                    <li><a href="Fontes.html">Fontes</a></li>
+                </ul>
+            </nav>
+            <section aria-label="Sobre os dados e o uso de IA">
+                <p class="rodape-titulo">Transparência</p>
+                <p>Os dados vêm de estudos citados na página <a href="Fontes.html">Fontes</a> e mostram tendências, não causas. O uso de IA no projeto está registrado em <a href="https://github.com/Paulo984-ss/ATC-5-PD/blob/main/AUDITORIA_IA.md" target="_blank" rel="noopener">AUDITORIA_IA.md</a>.</p>
+            </section>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-
-
-
 </body>
 
 </html>

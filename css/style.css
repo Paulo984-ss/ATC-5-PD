@@ -1,342 +1,270 @@
-Chart.defaults.font.family="Inter, sans-serif";
-Chart.defaults.color="#C4C4C4";
+:root {
+    --cor-primaria: #2563EB;
+    --cor-primaria-hover: #1D4ED8;
+    --cor-secundaria: #60A5FA;
+    --cor-realce: #1D4ED8;
+    --cor-alerta: #B45309;
+    --cor-fundo: #F3F6FB;
+    --cor-superficie: #FFFFFF;
+    --cor-texto: #0F172A;
+    --cor-texto-suave: #475569;
+    --cor-borda: #D5DDEA;
+    --cor-foco: #2563EB;
+    --cor-nav: rgba(15, 23, 42, 0.82);
 
+    --fonte-titulo: "Space Grotesk", system-ui, sans-serif;
+    --fonte-corpo: "Inter", system-ui, sans-serif;
+    --texto-sm: 0.875rem;
+    --texto-base: 1rem;
+    --texto-lg: 1.25rem;
+    --texto-xl: 1.563rem;
 
-
-function formatarPorcentagem(valor) {
-    return valor+"%";
+    --espaco-1: 0.5rem;
+    --espaco-2: 1rem;
+    --espaco-3: 1.5rem;
+    --espaco-4: 2.5rem;
+    --raio: 12px;
+    --transicao: 0.2s ease;
 }
 
-
-
-const elementoVagas=document.getElementById("graficoVagas");
-
-if (elementoVagas) {
-
-    new Chart(elementoVagas, {
-
-        type: "bar",
-
-        data: {
-
-            labels: [ "Júnior / padrão",
-            "Sênior / gerência"
-            ],
-
-            datasets: [ {
-
-                label: "Redução nas vagas",
-
-                data: [34, 19],
-
-                backgroundColor: [ "#2563EB",
-                "#60A5FA"
-                ],
-
-                borderRadius: 8,
-
-                barThickness: 35
-            }
-
-            ]
-        }
-
-        ,
-
-        options: {
-
-            responsive: true,
-
-            maintainAspectRatio: false,
-
-            plugins: {
-
-                legend: {
-                    display: false
-                }
-
-                ,
-
-                tooltip: {
-
-                    callbacks: {
-
-                        label: function (context) {
-
-                            return context.raw + "% de redução";
-
-                        }
-
-                    }
-
-                }
-
-            }
-
-            ,
-
-            scales: {
-
-                x: {
-
-                    grid: {
-                        display: false
-                    }
-
-                }
-
-                ,
-
-                y: {
-
-                    beginAtZero: true,
-
-                    max: 40,
-
-                    ticks: {
-
-                        callback: formatarPorcentagem
-                    }
-
-                    ,
-
-                    grid: {
-
-                        color: "#333333"
-
-                    }
-
-                }
-
-            }
-
-        }
-
-    });
-
+[data-bs-theme="dark"] {
+    --cor-realce: #60A5FA;
+    --cor-alerta: #F59E0B;
+    --cor-fundo: #0E1116;
+    --cor-superficie: #1B1B1B;
+    --cor-texto: #E5E7EB;
+    --cor-texto-suave: #C4C4C4;
+    --cor-borda: #343434;
+    --cor-foco: #93C5FD;
 }
 
-
-
-const elementoExperiencia=document.getElementById("graficoExperiencia");
-
-if (elementoExperiencia) {
-
-    new Chart(elementoExperiencia, {
-
-        type: "line",
-
-        data: {
-
-            labels: [ "2022",
-            "2025"
-            ],
-
-            datasets: [ {
-
-                label: "Vagas que exigem 5+ anos",
-
-                data: [37, 42],
-
-                borderColor: "#60A5FA",
-
-                backgroundColor: "#2563EB",
-
-                pointBackgroundColor: "#60A5FA",
-
-                pointRadius: 6,
-
-                borderWidth: 3,
-
-                tension: 0.3
-            }
-
-            ]
-        }
-
-        ,
-
-        options: {
-
-            responsive: true,
-
-            maintainAspectRatio: false,
-
-            plugins: {
-
-                legend: {
-
-                    display: false
-                }
-
-                ,
-
-                tooltip: {
-
-                    callbacks: {
-
-                        label: function (context) {
-
-                            return context.raw + "% das vagas";
-
-                        }
-
-                    }
-
-                }
-
-            }
-
-            ,
-
-            scales: {
-
-                x: {
-
-                    grid: {
-
-                        display: false
-                    }
-
-                }
-
-                ,
-
-                y: {
-
-                    beginAtZero: true,
-
-                    max: 50,
-
-                    ticks: {
-
-                        callback: formatarPorcentagem
-                    }
-
-                    ,
-
-                    grid: {
-
-                        color: "#333333"
-
-                    }
-
-                }
-
-            }
-
-        }
-
-    });
-
+body {
+    font-family: var(--fonte-corpo);
+    font-size: var(--texto-base);
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transition: background-color var(--transicao), color var(--transicao);
 }
 
+h1, h2, h3, h4, h5, h6, .brand {
+    font-family: var(--fonte-titulo);
+    letter-spacing: -0.01em;
+}
 
+p, li { max-width: 75ch; }
 
+a { color: var(--cor-realce); }
 
-const elementoJovens=document.getElementById("graficoJovens");
+a:focus-visible,
+button:focus-visible,
+.form-range:focus-visible,
+.form-select:focus-visible,
+.accordion-button:focus-visible {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 3px;
+    box-shadow: none;
+}
 
-if (elementoJovens) {
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: var(--espaco-1);
+    padding: var(--espaco-1) var(--espaco-2);
+    background: var(--cor-primaria);
+    color: #FFFFFF;
+    border-radius: 8px;
+    z-index: 2000;
+}
 
-    new Chart(elementoJovens, {
+.skip-link:focus { left: var(--espaco-2); }
 
-        type: "bar",
+.site-nav {
+    background-color: var(--cor-nav);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
 
-        data: {
+.site-nav .brand {
+    color: #FFFFFF;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: var(--espaco-1);
+}
 
-            labels: [ "Estudo de 2025",
-            "Atualização de 2026"
-            ],
+.site-nav .nav-link {
+    color: #E2E8F0;
+    border-bottom: 2px solid transparent;
+    transition: color var(--transicao), border-color var(--transicao);
+}
 
-            datasets: [ {
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active {
+    color: #FFFFFF;
+    border-bottom-color: var(--cor-secundaria);
+}
 
-                label: "Redução relativa no emprego",
+.section-card {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: calc(var(--raio) * 1.5);
+}
 
-                data: [13, 19],
+.card-timeline,
+.card-dado,
+.card-grafico {
+    --bs-card-bg: var(--cor-superficie);
+    --bs-card-color: var(--cor-texto);
+    --bs-card-border-color: var(--cor-borda);
+    --bs-card-border-radius: var(--raio);
+}
 
-                backgroundColor: [ "#93C5FD",
-                "#2563EB"
-                ],
+.card-dado {
+    transition: transform var(--transicao), border-color var(--transicao);
+}
 
-                borderRadius: 8,
+.card-dado:hover {
+    transform: translateY(-3px);
+    border-color: var(--cor-secundaria);
+}
 
-                barThickness: 45
-            }
+.numero {
+    display: inline-grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--cor-primaria);
+    color: #FFFFFF;
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+}
 
-            ]
-        }
+.numero-dado {
+    font-family: var(--fonte-titulo);
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--cor-realce);
+    margin-bottom: var(--espaco-1);
+}
 
-        ,
+.card-dado p:not(.numero-dado) {
+    color: var(--cor-texto-suave);
+    font-size: var(--texto-sm);
+    margin: 0 auto;
+}
 
-        options: {
+/* ---------- Gráficos ---------- */
+.grafico-container {
+    position: relative;
+    height: 280px;
+}
 
-            responsive: true,
+.grafico-alto { height: 340px; }
 
-            maintainAspectRatio: false,
+.fonte-grafico {
+    margin-top: var(--espaco-2);
+    color: var(--cor-texto-suave);
+    font-size: 0.8rem;
+}
 
-            plugins: {
+.nota-dados {
+    color: var(--cor-texto-suave);
+    font-size: var(--texto-sm);
+    border-left: 4px solid var(--cor-secundaria);
+    padding-left: var(--espaco-2);
+}
 
-                legend: {
+.linhas { margin-bottom: var(--espaco-2); }
 
-                    display: false
-                }
+.linha {
+    height: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--cor-borda), var(--cor-secundaria), var(--cor-borda));
+    background-size: 200% 100%;
+    width: var(--larg, 100%);
+    animation:
+        escrever 1.1s ease-out both,
+        brilho 3s linear 1.1s infinite;
+    animation-delay: calc(var(--i, 0) * 140ms), calc(1.1s + var(--i, 0) * 140ms);
+}
 
-                ,
+@keyframes escrever {
+    from { width: 0; opacity: 0.3; }
+    to   { width: var(--larg, 100%); opacity: 1; }
+}
 
-                tooltip: {
+@keyframes brilho {
+    from { background-position: 200% 0; }
+    to   { background-position: -200% 0; }
+}
 
-                    callbacks: {
+.btn-primary {
+    --bs-btn-bg: var(--cor-primaria);
+    --bs-btn-border-color: var(--cor-primaria);
+    --bs-btn-hover-bg: var(--cor-primaria-hover);
+    --bs-btn-hover-border-color: var(--cor-primaria-hover);
+    --bs-btn-active-bg: var(--cor-primaria-hover);
+    transition: transform var(--transicao), background-color var(--transicao);
+}
 
-                        label: function (context) {
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
 
-                            return context.raw + "% de redução";
+.accordion {
+    --bs-accordion-bg: var(--cor-superficie);
+    --bs-accordion-color: var(--cor-texto);
+    --bs-accordion-border-color: var(--cor-borda);
+    --bs-accordion-border-radius: var(--raio);
+    --bs-accordion-btn-focus-box-shadow: none;
+}
 
-                        }
+.accordion-button { font-family: var(--fonte-titulo); font-weight: 500; }
 
-                    }
+.badge-eixo {
+    font-family: var(--fonte-corpo);
+    font-weight: 500;
+}
 
-                }
+.lista-fontes li { padding-block: var(--espaco-2); }
 
-            }
+.site-footer {
+    margin-top: var(--espaco-4);
+    padding-block: var(--espaco-4);
+    background-color: var(--cor-superficie);
+    border-top: 1px solid var(--cor-borda);
+    color: var(--cor-texto-suave);
+    font-size: var(--texto-sm);
+}
 
-            ,
+.rodape-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: var(--espaco-3);
+}
 
-            scales: {
+.rodape-titulo {
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    color: var(--cor-texto);
+    margin-bottom: var(--espaco-1);
+}
 
-                x: {
+.rodape-grid ul { list-style: none; padding: 0; margin: 0; }
 
-                    grid: {
+@media (max-width: 767.98px) {
+    .rodape-grid { grid-template-columns: 1fr; }
+    .grafico-container { height: 240px; }
+    .grafico-alto { height: 320px; }
+}
 
-                        display: false
-                    }
-
-                }
-
-                ,
-
-                y: {
-
-                    beginAtZero: true,
-
-                    ticks: {
-
-                        callback: formatarPorcentagem
-                    }
-
-                    ,
-
-                    grid: {
-
-                        color: "#333333"
-
-                    }
-
-                }
-
-            }
-
-        }
-
-    });
-
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
 }

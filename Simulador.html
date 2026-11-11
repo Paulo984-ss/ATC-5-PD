@@ -4,22 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="Simulador que cruza preparo técnico e bem-estar de quem busca o primeiro emprego em tecnologia na era da IA.">
+    <meta name="description" content="Simulador que cruza preparo técnico e bem-estar de quem busca o primeiro emprego em tecnologia na era da IA.">
     <title>Simulador | Porta de Entrada Fechada?</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="js/tema.js"></script>
 </head>
 
 <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
     <header>
-        <nav class="navbar navbar-expand-lg site-nav sticky-top" aria-label="Navegação principal">
+        <nav class="navbar navbar-expand-lg site-nav sticky-top" data-bs-theme="dark" aria-label="Navegação principal">
             <div class="container">
                 <a class="navbar-brand brand" href="index.html">Porta de Entrada</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -32,31 +31,27 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.html#inicio">Cenário</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="Dados.html">Dados</a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link active" href="Simulador.html">Simulador</a>
+                            <a class="nav-link active" href="Simulador.html" aria-current="page">Simulador</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="Debate.html">Debate</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="Fontes.html">Fontes</a>
                         </li>
                     </ul>
-                    <button id="btnTema" type="button" class="btn btn-outline-light btn-sm ms-lg-3 mt-2 mt-lg-0">🌙 Modo escuro</button>
+                    <button id="btnTema" type="button" class="btn btn-outline-light btn-sm ms-lg-3 mt-2 mt-lg-0" aria-pressed="false">🌙 Modo escuro</button>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="container my-4">
-        <section id="Simulador" class="p-4 p-md-5 section-card mb-5" aria-labelledby="titulo-simulador">
+    <main id="conteudo" class="container py-4">
+        <section id="simulador" class="p-4 p-md-5 section-card mb-5" aria-labelledby="titulo-simulador">
             <header class="mb-4">
                 <h1 id="titulo-simulador" class="display-6 fw-bold">Simulador de empregabilidade júnior</h1>
                 <p class="lead text-body-secondary col-lg-9 px-0">
@@ -177,10 +172,39 @@
                     </div>
                 </article>
             </section>
+
+            <aside class="nota-dados mt-4" aria-label="Aviso sobre o simulador">
+                <p class="mb-0">
+                    O simulador é uma autoavaliação simples com fins educativos. O Eixo B não usa uma escala
+                    psicológica validada e não substitui avaliação profissional. Se você se sente sobrecarregado,
+                    converse com alguém de confiança ou procure apoio de um profissional de saúde.
+                </p>
+            </aside>
         </section>
     </main>
 
-    <footer></footer>
+    <footer class="site-footer">
+        <div class="container rodape-grid">
+            <section aria-label="Sobre o projeto">
+                <p class="rodape-titulo">Porta de Entrada Fechada?</p>
+                <p>Projeto acadêmico de Front-end e Copilotagem com IA (UNICID, Prof. Diego Marques de Carvalho) sobre IA, primeiro emprego e Geração Z.</p>
+            </section>
+            <nav aria-label="Páginas do site">
+                <p class="rodape-titulo">Páginas</p>
+                <ul>
+                    <li><a href="index.html#inicio">Cenário</a></li>
+                    <li><a href="Dados.html">Dados</a></li>
+                    <li><a href="Simulador.html">Simulador</a></li>
+                    <li><a href="Debate.html">Debate</a></li>
+                    <li><a href="Fontes.html">Fontes</a></li>
+                </ul>
+            </nav>
+            <section aria-label="Sobre os dados e o uso de IA">
+                <p class="rodape-titulo">Transparência</p>
+                <p>Os dados vêm de estudos citados na página <a href="Fontes.html">Fontes</a> e mostram tendências, não causas. O uso de IA no projeto está registrado em <a href="https://github.com/Paulo984-ss/ATC-5-PD/blob/main/AUDITORIA_IA.md" target="_blank" rel="noopener">AUDITORIA_IA.md</a>.</p>
+            </section>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/simulador.js"></script>

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Estudos e relatórios usados nos dados do site Porta de Entrada Fechada.">
     <title>Fontes | Porta de Entrada</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,8 +15,10 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
     <header>
-        <nav class="navbar navbar-expand-lg site-nav sticky-top" aria-label="Navegação principal">
+        <nav class="navbar navbar-expand-lg site-nav sticky-top" data-bs-theme="dark" aria-label="Navegação principal">
             <div class="container">
                 <a class="navbar-brand brand" href="index.html">Porta de Entrada</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -28,52 +31,88 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.html#inicio">Cenário</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="Dados.html">Dados</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="Simulador.html">Simulador</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="Debate.html">Debate</a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link active" href="Fontes.html">Fontes</a>
+                            <a class="nav-link active" href="Fontes.html" aria-current="page">Fontes</a>
                         </li>
                     </ul>
-                    <button id="btnTema" type="button" class="btn btn-outline-light btn-sm ms-lg-3 mt-2 mt-lg-0">🌙 Modo escuro</button>
+                    <button id="btnTema" type="button" class="btn btn-outline-light btn-sm ms-lg-3 mt-2 mt-lg-0" aria-pressed="false">🌙 Modo escuro</button>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="container py-4">
-        <section class="section-card p-4 p-md-5 mb-5">
-            <h1 class="display-6">Fontes</h1>
-            <p class="lead text-secondary">Estudos e relatórios usados nos dados do site.</p>
+    <main id="conteudo" class="container py-4">
+        <section class="section-card p-4 p-md-5 mb-5" aria-labelledby="titulo-fontes">
+            <h1 id="titulo-fontes" class="display-6">Fontes</h1>
+            <p class="lead text-body-secondary">Estudos e relatórios usados nos dados do site.</p>
 
-            <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush lista-fontes">
                 <li class="list-group-item bg-transparent">
-                    <strong>Indeed Hiring Lab (2025)</strong>: dados sobre vagas de tecnologia
-                    (júnior e sênior) e exigência de experiência.
-                    <br><a href="https://www.hiringlab.org" target="_blank" rel="noopener">hiringlab.org</a>
+                    <strong>Indeed Hiring Lab (30/07/2025), Experience Requirements Have Tightened Amid the Tech Hiring Freeze</strong>: queda das vagas de tecnologia júnior (34%) e sênior (19%) em fev/2025 frente a fev/2020 e aumento das vagas que pedem 5+ anos (37% para 42%, 2º tri/2022 a 2º tri/2025). Usada nos dois primeiros gráficos.
+                    <br><a href="https://www.hiringlab.org/2025/07/30/experience-requirements-have-tightened-amid-the-tech-hiring-freeze/" target="_blank" rel="noopener">hiringlab.org: artigo original</a>
                 </li>
                 <li class="list-group-item bg-transparent">
-                    <strong>Stanford Digital Economy Lab (2025 e 2026)</strong>: estudos sobre o emprego
-                    de jovens em áreas expostas à IA.
-                    <br><a href="https://digitaleconomy.stanford.edu" target="_blank" rel="noopener">digitaleconomy.stanford.edu</a>
+                    <strong>Stanford Digital Economy Lab, Brynjolfsson, Chandar e Chen</strong>: Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence (ago/2025, revisado em ago/2026): emprego de jovens de 22 a 25 anos em ocupações expostas à IA. Usada no terceiro gráfico.
+                    <br><a href="https://digitaleconomy.stanford.edu/publications/canaries-in-the-coal-mine/" target="_blank" rel="noopener">Publicação</a><br><a href="https://digitaleconomy.stanford.edu/news/canariesaug26/" target="_blank" rel="noopener">Destaques da revisão de 2026</a>
+                </li>
+                <li class="list-group-item bg-transparent">
+                    <strong>Deloitte Global, 2026 Gen Z and Millennial Survey</strong>: pesquisa com mais de 22.500 jovens em 44 países (nov/2025 a jan/2026): uso de IA, burnout, ansiedade e saúde mental. Usada no quarto gráfico e no Debate.
+                    <br><a href="https://www.deloitte.com/content/dam/assets-shared/docs/campaigns/2026/2026-genz-millennial-survey.pdf" target="_blank" rel="noopener">Relatório (PDF)</a><br><a href="https://www.deloitte.com/na/en/about/press-room/deloitte-2026-gen-z-and-millennial-survey.html" target="_blank" rel="noopener">Comunicado da Deloitte</a>
+                </li>
+                <li class="list-group-item bg-transparent">
+                    <strong>Documentação técnica</strong>: Bootstrap 5.3 e Chart.js 4.
+                    <br><a href="https://getbootstrap.com/docs/5.3/" target="_blank" rel="noopener">Bootstrap 5.3</a><br><a href="https://www.chartjs.org/docs/" target="_blank" rel="noopener">Chart.js</a>
                 </li>
             </ul>
 
-            <p class="nota-dados mt-4">
-                Os dados são dos Estados Unidos. Consulte as fontes originais para verificar os números.
+            <h2 class="h4 mt-5">Transparência no uso de IA</h2>
+            <p>
+                A IA generativa foi usada de forma registrada: os gráficos, o simulador e o tema claro/escuro
+                (recursos avançados) e uma revisão geral do projeto. Cada uso está descrito, com prompt,
+                resposta, auditoria e refatoração, em
+                <a href="https://github.com/Paulo984-ss/ATC-5-PD/blob/main/AUDITORIA_IA.md" target="_blank" rel="noopener">AUDITORIA_IA.md</a>.
             </p>
+
+            <aside class="nota-dados mt-4" aria-label="Aviso sobre os dados">
+                <p class="mb-0">
+                    Indeed e Stanford usam dados dos Estados Unidos; a Deloitte é global.
+                    Consulte as fontes originais para verificar os números.
+                </p>
+            </aside>
         </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="container rodape-grid">
+            <section aria-label="Sobre o projeto">
+                <p class="rodape-titulo">Porta de Entrada Fechada?</p>
+                <p>Projeto acadêmico de Front-end e Copilotagem com IA (UNICID, Prof. Diego Marques de Carvalho) sobre IA, primeiro emprego e Geração Z.</p>
+            </section>
+            <nav aria-label="Páginas do site">
+                <p class="rodape-titulo">Páginas</p>
+                <ul>
+                    <li><a href="index.html#inicio">Cenário</a></li>
+                    <li><a href="Dados.html">Dados</a></li>
+                    <li><a href="Simulador.html">Simulador</a></li>
+                    <li><a href="Debate.html">Debate</a></li>
+                    <li><a href="Fontes.html">Fontes</a></li>
+                </ul>
+            </nav>
+            <section aria-label="Sobre os dados e o uso de IA">
+                <p class="rodape-titulo">Transparência</p>
+                <p>Os dados vêm de estudos citados na página <a href="Fontes.html">Fontes</a> e mostram tendências, não causas. O uso de IA no projeto está registrado em <a href="https://github.com/Paulo984-ss/ATC-5-PD/blob/main/AUDITORIA_IA.md" target="_blank" rel="noopener">AUDITORIA_IA.md</a>.</p>
+            </section>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

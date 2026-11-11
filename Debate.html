@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Os dois lados do debate sobre IA e primeiro emprego, incluindo o lado emocional da Geração Z.">
     <title>Debate | Porta de Entrada</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,8 +15,10 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
     <header>
-        <nav class="navbar navbar-expand-lg site-nav sticky-top" aria-label="Navegação principal">
+        <nav class="navbar navbar-expand-lg site-nav sticky-top" data-bs-theme="dark" aria-label="Navegação principal">
             <div class="container">
                 <a class="navbar-brand brand" href="index.html">Porta de Entrada</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -28,61 +31,103 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.html#inicio">Cenário</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="Dados.html">Dados</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="Simulador.html">Simulador</a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link active" href="Debate.html">Debate</a>
+                            <a class="nav-link active" href="Debate.html" aria-current="page">Debate</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="Fontes.html">Fontes</a>
                         </li>
                     </ul>
-                    <button id="btnTema" type="button" class="btn btn-outline-light btn-sm ms-lg-3 mt-2 mt-lg-0">🌙 Modo escuro</button>
+                    <button id="btnTema" type="button" class="btn btn-outline-light btn-sm ms-lg-3 mt-2 mt-lg-0" aria-pressed="false">🌙 Modo escuro</button>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="container py-4">
-        <section class="section-card p-4 p-md-5 mb-5">
-            <h1 class="display-6">A IA fecha a porta de entrada?</h1>
-            <p class="lead text-secondary">
+    <main id="conteudo" class="container py-4">
+        <section class="section-card p-4 p-md-5 mb-5" aria-labelledby="titulo-debate">
+            <h1 id="titulo-debate" class="display-6">A IA fecha a porta de entrada?</h1>
+            <p class="lead text-body-secondary">
                 Há quem veja uma ameaça ao primeiro emprego e quem veja apenas uma mudança de caminho.
-                Veja os dois lados.
+                Abra cada ponto para ver os dois lados e o que sente quem está começando.
             </p>
 
-            <div class="row g-4 mt-2">
-                <div class="col-12 col-md-6">
-                    <article class="card card-timeline h-100">
-                        <div class="card-body">
-                            <h2 class="h4">Sim, a porta está se fechando</h2>
-                            <ul>
+            <div class="accordion mt-4" id="acordeaoDebate">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#debate1" aria-expanded="true" aria-controls="debate1">
+                            Sim, a porta está se fechando
+                        </button>
+                    </h3>
+                    <div id="debate1" class="accordion-collapse collapse show" data-bs-parent="#acordeaoDebate">
+                        <div class="accordion-body">
+                            <ul class="mb-0">
                                 <li>As tarefas simples que ensinavam o júnior estão sendo automatizadas.</li>
-                                <li>As empresas passam a exigir mais experiência de quem está começando.</li>
+                                <li>As empresas pedem mais experiência: vagas de tecnologia com 5+ anos foram de 37% para 42% (Indeed, 2022 a 2025).</li>
+                                <li>Entre jovens de 22 a 25 anos, a diferença de emprego em ocupações expostas à IA chegou a 19% (Stanford, 2026), com peso maior na contratação do que em demissões.</li>
                                 <li>Sem a primeira vaga, fica difícil conseguir a experiência pedida.</li>
                             </ul>
                         </div>
-                    </article>
+                    </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <article class="card card-timeline h-100">
-                        <div class="card-body">
-                            <h2 class="h4">Não, o caminho está mudando</h2>
-                            <ul>
-                                <li>A IA vira ferramenta e o júnior pode produzir mais com ela.</li>
-                                <li>Surgem funções novas, como revisão e auditoria de código e uso de IA.</li>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#debate2" aria-expanded="false" aria-controls="debate2">
+                            Não, o caminho está mudando
+                        </button>
+                    </h3>
+                    <div id="debate2" class="accordion-collapse collapse" data-bs-parent="#acordeaoDebate">
+                        <div class="accordion-body">
+                            <ul class="mb-0">
+                                <li>O próprio estudo de Stanford não encontra demissões em massa na economia como um todo.</li>
+                                <li>Na pesquisa da Deloitte (2026), 23% dizem que a IA está levando suas empresas a criar novas vagas de entrada.</li>
+                                <li>A IA vira ferramenta: surgem funções de revisão e auditoria de código e de uso crítico de IA.</li>
                                 <li>Projetos próprios e portfólio ajudam a provar habilidade na prática.</li>
                             </ul>
                         </div>
-                    </article>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#debate3" aria-expanded="false" aria-controls="debate3">
+                            E a saúde emocional de quem está começando?
+                        </button>
+                    </h3>
+                    <div id="debate3" class="accordion-collapse collapse" data-bs-parent="#acordeaoDebate">
+                        <div class="accordion-body">
+                            <ul class="mb-0">
+                                <li>Na Geração Z, 48% relatam burnout e 34% se sentem ansiosos ou estressados quase sempre (Deloitte, 2026).</li>
+                                <li>Comparar-se o tempo todo com a velocidade da IA pode alimentar a sensação de não ser bom o bastante. Essa é uma hipótese a investigar, não um resultado dos dados acima.</li>
+                                <li>O simulador deste site trata o preparo técnico e o bem-estar como dois eixos separados por esse motivo.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#debate4" aria-expanded="false" aria-controls="debate4">
+                            O que a geração tem de forte
+                        </button>
+                    </h3>
+                    <div id="debate4" class="accordion-collapse collapse" data-bs-parent="#acordeaoDebate">
+                        <div class="accordion-body">
+                            <ul class="mb-0">
+                                <li>Adaptabilidade: 74% já usam IA no trabalho diário (Deloitte, 2026, Geração Z e millennials).</li>
+                                <li>Bem-estar em alta prioridade: 44% da Geração Z prefere crescer com progresso constante a buscar promoções rápidas.</li>
+                                <li>63% avalia a própria saúde mental como boa ou ótima, mais do que no ano anterior (52%).</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -96,12 +141,37 @@
                 </div>
             </article>
 
-            <p class="nota-dados mt-4">
-                Os estudos mostram tendências e associações, mas não provam que a IA seja a única causa
-                das mudanças no mercado de trabalho.
-            </p>
+            <aside class="nota-dados mt-4" aria-label="Aviso sobre os dados">
+                <p class="mb-0">
+                    Os estudos mostram tendências e associações, mas não provam que a IA seja a única causa
+                    das mudanças no mercado de trabalho.
+                </p>
+            </aside>
         </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="container rodape-grid">
+            <section aria-label="Sobre o projeto">
+                <p class="rodape-titulo">Porta de Entrada Fechada?</p>
+                <p>Projeto acadêmico de Front-end e Copilotagem com IA (UNICID, Prof. Diego Marques de Carvalho) sobre IA, primeiro emprego e Geração Z.</p>
+            </section>
+            <nav aria-label="Páginas do site">
+                <p class="rodape-titulo">Páginas</p>
+                <ul>
+                    <li><a href="index.html#inicio">Cenário</a></li>
+                    <li><a href="Dados.html">Dados</a></li>
+                    <li><a href="Simulador.html">Simulador</a></li>
+                    <li><a href="Debate.html">Debate</a></li>
+                    <li><a href="Fontes.html">Fontes</a></li>
+                </ul>
+            </nav>
+            <section aria-label="Sobre os dados e o uso de IA">
+                <p class="rodape-titulo">Transparência</p>
+                <p>Os dados vêm de estudos citados na página <a href="Fontes.html">Fontes</a> e mostram tendências, não causas. O uso de IA no projeto está registrado em <a href="https://github.com/Paulo984-ss/ATC-5-PD/blob/main/AUDITORIA_IA.md" target="_blank" rel="noopener">AUDITORIA_IA.md</a>.</p>
+            </section>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

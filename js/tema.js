@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
         document.documentElement.setAttribute('data-bs-theme', novo);
         try { localStorage.setItem('tema', novo); } catch (e) { }
         atualizar();
+        // Avisa outros scripts (ex.: gráficos) que o tema mudou
+        document.dispatchEvent(new CustomEvent('tema-alterado', { detail: { tema: novo } }));
     });
 
     atualizar();
