@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR" data-bs-theme="dark">
 
@@ -20,20 +19,38 @@
 
     <header>
 
-        <nav class="navbar navbar-expand-lg site-nav">
-
+        <nav class="navbar navbar-expand-lg site-nav sticky-top" aria-label="Navegação principal">
             <div class="container">
+                <a class="navbar-brand brand" href="index.html">Porta de Entrada</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menu" aria-controls="menu" aria-expanded="false"
+                    aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#inicio">Cenário</a>
+                        </li>
 
-                <a class="navbar-brand brand" href="index.html">
-                    Porta de Entrada
-                </a>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Dados.html">Dados</a>
+                        </li>
 
-                <a class="nav-link" href="index.html#dados">
-                    Voltar para o início
-                </a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Simulador.html">Simulador</a>
+                        </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="Debate.html">Debate</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="Fontes.html">Fontes</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-
         </nav>
 
     </header>
@@ -184,6 +201,7 @@
     </main>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="js/script.js"></script>
