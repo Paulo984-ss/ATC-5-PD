@@ -1,75 +1,142 @@
 # Porta de Entrada Fechada?
 
-## 1. Sobre o projeto
+![Ilustração do projeto: jovem desanimado diante do notebook, ao lado de um robô de IA e de uma vaga júnior substituída](image/ia-image.png)
 
-O **Porta de Entrada Fechada?** é um projeto acadêmico que aborda os impactos da Inteligência Artificial (IA) no primeiro emprego, com foco nos desafios enfrentados pela Geração Z para ingressar no mercado de trabalho.
+## 1. Visão geral e preview
 
-O site apresenta informações, dados e gráficos sobre as mudanças nas oportunidades profissionais, buscando estimular a reflexão sobre como a inteligência artificial está transformando as exigências do mercado.
+**Porta de Entrada Fechada?** é um projeto acadêmico de Front-end e Copilotagem com IA (UNICID, Prof. Diego Marques de Carvalho). Ele investiga como a inteligência artificial muda o primeiro emprego em tecnologia e como a Geração Z vive esse cenário, cruzando:
 
-**Status do projeto:** Em desenvolvimento.
+- **Eixo A (futuro do trabalho):** vagas júnior x sênior, exigência de experiência e emprego de jovens em ocupações expostas à IA.
+- **Eixo B (socioemocional):** facetas críticas (burnout, ansiedade) e positivas (adaptabilidade, saúde mental, preferência por progresso constante) da Geração Z.
 
-**Acesse o site:** Em breve, após a publicação no GitHub Pages.
+**Site publicado (GitHub Pages):** https://paulo984-ss.github.io/ATC-5-PD/
 
-## 2. Estrutura dos arquivos
+**Status:** em finalização. O link acima só funciona depois de ativar o Pages (Settings > Pages > Deploy from a branch > `main` > `/ (root)`).
+
+Páginas: **Cenário** (`index.html`), **Dados**, **Simulador**, **Debate** e **Fontes**.
+
+## 2. Estrutura de arquivos e diretórios
 
 ```text
-Porta-de-Entrada-Fechada/
-│
+ATC-5-PD/
 ├── index.html
+├── Dados.html
+├── Simulador.html
+├── Debate.html
+├── Fontes.html
 ├── css/
-│   └── style.css
+│   └── style.css          # Design System (variáveis :root), Grid, Flexbox, animações
 ├── js/
-│   └── script.js
-├── AUDITORIA_IA.md
+│   ├── tema.js            # tema claro/escuro com localStorage
+│   ├── script.js          # gráficos (Chart.js)
+│   └── simulador.js       # microaplicação interativa
+├── image/
+│   └── ia-image.png
+├── AUDITORIA_IA.md        # registro de auditoria de IA (prompt logbook)
 ├── README.md
 ├── LICENSE
 └── .gitignore
 ```
 
-A estrutura poderá ser atualizada conforme novas páginas e funcionalidades forem adicionadas ao projeto.
+## 3. Arquitetura de software e contratos de dados
 
-## 3. Arquitetura e funcionamento
+### Componentes da interface
 
-O projeto é desenvolvido utilizando HTML, CSS e JavaScript.
+| Componente | Onde | Função |
+|---|---|---|
+| Navbar responsiva (Bootstrap) | todas as páginas | navegação e menu hambúrguer colapsável |
+| Alternância de tema | `tema.js` | salva `light` ou `dark` em `localStorage` e dispara o evento `tema-alterado` |
+| Cards de indicadores | `Dados.html` | três números-síntese |
+| Gráficos | `Dados.html` + `script.js` | quatro gráficos Chart.js com `role="img"` e `aria-label` |
+| Simulador | `Simulador.html` + `simulador.js` | diagnóstico de preparo técnico e bem-estar |
+| Accordion | `Debate.html` | os dois lados do debate e o eixo socioemocional |
 
-- **HTML:** organiza a estrutura e o conteúdo das páginas.
-- **CSS:** define o visual, as cores, o espaçamento e a responsividade.
-- **JavaScript:** adiciona funcionalidades e permite a apresentação dos gráficos.
-- **Chart.js:** biblioteca utilizada para criar gráficos com os dados pesquisados.
+### Contrato de dados dos gráficos (`js/script.js`)
 
-A página **Dados** apresenta informações sobre o mercado de trabalho e as exigências de experiência profissional. Os gráficos ajudam a visualizar os dados e compreender melhor o tema.
+```json
+{
+  "graficoVagas": {
+    "fonte": "Indeed Hiring Lab (30/07/2025)",
+    "labels": ["Júnior / padrão", "Sênior / gerência"],
+    "data": [34, 19],
+    "unidade": "% de queda em fev/2025 vs. fev/2020"
+  },
+  "graficoExperiencia": {
+    "fonte": "Indeed Hiring Lab (30/07/2025)",
+    "labels": ["2º tri 2022", "2º tri 2025"],
+    "data": [37, 42],
+    "unidade": "% das vagas de tecnologia que pedem 5+ anos"
+  },
+  "graficoJovens": {
+    "fonte": "Stanford Digital Economy Lab (ago/2025 e revisão ago/2026)",
+    "labels": ["Estudo de 2025", "Atualização de 2026"],
+    "data": [13, 19],
+    "unidade": "% de diferença relativa no emprego, jovens de 22 a 25 anos",
+    "ressalva": "métodos diferentes; não comparar diretamente"
+  },
+  "graficoGeracaoZ": {
+    "fonte": "Deloitte Global Gen Z and Millennial Survey 2026",
+    "labels": ["Usam IA no trabalho diário", "Saúde mental boa ou ótima", "Sentem-se esgotados (burnout)", "Ansiosos ou estressados quase sempre"],
+    "data": [74, 63, 48, 34],
+    "unidade": "% dos respondentes"
+  }
+}
+```
 
-Durante o desenvolvimento, utilizamos o ChatGPT como ferramenta de apoio para organizar os dados em gráficos e identificar e corrigir erros no código HTML. As sugestões foram revisadas e adaptadas pela dupla.
+### Contrato de dados do simulador (`js/simulador.js`)
 
-## 4. Tecnologias e dependências
+Entrada (valores lidos do formulário):
 
-| Tecnologia | Utilização |
-|---|---|
-| HTML5 | Estruturação do conteúdo |
-| CSS3 | Estilização e responsividade |
-| JavaScript | Funcionalidades e gráficos |
-| Bootstrap 5.3.3 | Construção do layout responsivo |
-| Chart.js | Criação dos gráficos |
-| Google Fonts | Tipografia do site |
-| ChatGPT | Apoio na organização dos dados e correção de erros |
+```json
+{
+  "horas": "0 a 30 (horas de estudo por semana)",
+  "projetos": "0 | 10 | 16 | 20",
+  "usoIa": "5 | 15 | 25",
+  "experiencia": "0 | 8 | 20 | 30",
+  "ansiedade": "1 a 5",
+  "descanso": "0 a 7 (dias sem tela de estudo)"
+}
+```
 
-As bibliotecas externas são utilizadas por meio de links CDN.
+Saída (calculada em `simulador.js`):
 
-## 5. Divisão de tarefas e referências
+```json
+{
+  "tecnica": "round(horas/30*25 + projetos + usoIa + experiencia), de 0 a 100",
+  "bemEstar": "round((5 - ansiedade)/4*60 + min(descanso,3)/3*40), de 0 a 100",
+  "faixa": "Alta (>= 75) | Média (>= 45) | Baixa (< 45)",
+  "recomendacoes": ["lista de textos conforme as respostas"]
+}
+```
 
-### Divisão de tarefas
+O Eixo B é uma autoavaliação simples. Ele **não usa escala psicológica validada** e não substitui avaliação profissional.
 
-O projeto está sendo desenvolvido em dupla, com as tarefas divididas da seguinte forma:
+Dependências e CDN
 
-- **Meu colega:** responsável por pesquisar e reunir as informações sobre o impacto da IA no primeiro emprego.
-- **Eu:** responsável por aplicar as informações no Visual Studio Code e desenvolver e ajustar as páginas utilizando HTML, CSS e JavaScript.
-- **Trabalho em conjunto:** utilizamos o ChatGPT como apoio para transformar os dados em gráficos, corrigir erros no HTML e revisar o site.
+| Biblioteca | Versão | Origem | Uso |
+|---|---|---|---|
+| Bootstrap (CSS e JS Bundle) | 5.3.3 | jsDelivr | grid de 12 colunas, navbar, cards, accordion, badges, temas |
+| Chart.js | 4.4.7 (UMD) | jsDelivr | gráficos |
+| Google Fonts | Inter 400/500 e Space Grotesk 500/700 | fonts.googleapis.com | tipografia |
 
-### Referências
+**Justificativa de compatibilidade cross-browser:** todas as bibliotecas são entregues por CDN com versão fixa, o que garante o mesmo comportamento em Chrome, Firefox e Safari. O Bootstrap 5.3 e o Chart.js 4 não dependem de jQuery nem de polyfills. A tipografia tem fonte de reserva (`system-ui`), e o `backdrop-filter` do menu tem prefixo `-webkit-` para o Safari. Todos os caminhos de arquivos são relativos, o que evita erros 404 no GitHub Pages.
 
-- [Indeed Hiring Lab](https://www.hiringlab.org/)
-- [Stanford University](https://www.stanford.edu/)
-- [Chart.js — Documentação](https://www.chartjs.org/docs/)
-- [Bootstrap 5 — Documentação](https://getbootstrap.com/docs/5.3/)
 
-*As referências serão complementadas conforme a pesquisa e o desenvolvimento do projeto avançarem.*
+ Uso de IA
+
+- **Recursos avançados (gráficos, simulador, tema):** assistência de IA, registrada com prompt, resposta bruta, auditoria e refatoração em [`AUDITORIA_IA.md`](AUDITORIA_IA.md).
+- **Revisão geral (nov/2026):** foi usado o Claude (Anthropic) para conferir o projeto frente às instruções e corrigir pendências, incluindo arquivos da Parte I. Isso está declarado em `AUDITORIA_IA.md`.
+- A ilustração da página inicial parece ter sido gerada por IA. (Chat.gpt)
+
+ Acessibilidade e testes
+
+- HTML5 semântico (`header`, `nav`, `main`, `section`, `article`, `aside`, `footer`), um `<h1>` por página e link para pular ao conteúdo.
+- Gráficos com `role="img"` e `aria-label`; foco visível; `prefers-reduced-motion` respeitado.
+- Checklist de entrega: testar o site publicado em Chrome, Firefox, Safari e no celular, e abrir o Console (F12) para confirmar que não há erros.
+
+Referências
+
+- Indeed Hiring Lab. *Experience Requirements Have Tightened Amid the Tech Hiring Freeze* (30/07/2025). https://www.hiringlab.org/2025/07/30/experience-requirements-have-tightened-amid-the-tech-hiring-freeze/
+- Brynjolfsson, E.; Chandar, B.; Chen, R. *Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence*. Stanford Digital Economy Lab (ago/2025; revisado em ago/2026). https://digitaleconomy.stanford.edu/publications/canaries-in-the-coal-mine/
+- Deloitte Global. *2026 Gen Z and Millennial Survey*. https://www.deloitte.com/content/dam/assets-shared/docs/campaigns/2026/2026-genz-millennial-survey.pdf
+- Bootstrap 5.3: https://getbootstrap.com/docs/5.3/ · Chart.js: https://www.chartjs.org/docs/
